@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="강의8/자바16강소스코드/JavaLecture/src"/>
+	<classpathentry kind="lib" path="강의7/json-20210307.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,2 @@
+key=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
+url=https://api.openai.com/v1/chat/completions
