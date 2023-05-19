@@ -1,35 +1,41 @@
 package PRAC5;
 
+import java.util.*;
+
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		char[] abcCode= {
-						 '`','~','!','@','#','$','%','^','&','*','(',')',
-						 '-','_','+','=','|','[',']','{','}',';',':',',',
-						 '.','/'	
-						};
+		String[] words = {"television","computer","mouse","phone"};
 		
-		char[] numCode= {'q','w','e','r','t','y','u','i','o','p'};
+		Scanner scan = new Scanner(System.in);
 		
-		String src ="abc123";
-		String result= "";
-		
-		for(int i =0; i<src.length();i++)
+		for(int i=0;i<words.length;i++)
 		{
-			char ch = src.charAt(i);
+			char[] question = words[i].toCharArray();
 			
-			if('a'<=ch && ch<='z')
+			for(int j=0;j<question.length;j++)
 			{
-				result+= abcCode[ch-'a'];
-			}else if('0'<=ch && ch<='9')
+				int idx = (int)(Math.random()*question.length);
+				
+				char tmp = question[i];
+				question[i] = question[idx];
+				question[idx]=tmp;
+			}
+			System.out.printf("Q%d. %s의 정답을 입력하세요.>",i+1, new String(question));
+			
+			String answer = scan.nextLine();
+			
+			if(words[i].equals(answer.trim()))
 			{
-				result+=numCode[ch-'0'];
+				System.out.printf("맞았습니다.%n%n");
+			}else
+			{
+				System.out.printf("틀렸습니다.%n%n");
 			}
 		}
-		System.out.println("src :" + src);
-		System.out.println("result :" + result);
+		
 	}
 
 }
@@ -270,6 +276,141 @@ public static void 실습5_5(String[] args) {
 		
 		
 		
+		
+	}
+	
+	
+	public static void 실습5_10(String[] args) {
+		// TODO Auto-generated method stub
+
+		char[] abcCode= {
+						 '`','~','!','@','#','$','%','^','&','*','(',')',
+						 '-','_','+','=','|','[',']','{','}',';',':',',',
+						 '.','/'	
+						};
+		
+		char[] numCode= {'q','w','e','r','t','y','u','i','o','p'};
+		
+		String src ="abc123";
+		String result= "";
+		
+		for(int i =0; i<src.length();i++)
+		{
+			char ch = src.charAt(i);
+			
+			if('a'<=ch && ch<='z')
+			{
+				result+= abcCode[ch-'a'];
+			}else if('0'<=ch && ch<='9')
+			{
+				result+=numCode[ch-'0'];
+			}
+		}
+		System.out.println("src :" + src);
+		System.out.println("result :" + result);
+	}
+
+
+	public static void 실습5_11(String[] args) {
+		// TODO Auto-generated method stub
+
+		int[][] score = {
+				{100,100,100},
+				{20,20,20},
+				{30,30,30},
+				{40,40,40},
+				{50,50,50}
+				};
+		
+		int [][] result = new int[score.length+1][score[0].length+1];
+		
+		for(int i=0; i< score.length;i++)
+		{
+			for(int j =0;j<score[i].length;j++)
+			{
+				result[i][j] = score[i][j];
+				result[i][score[0].length]+=result[i][j];
+				result[score.length][j]+=result[i][j];
+				result[score.length][score[0].length]+=result[i][j];
+			}
+		}
+		
+		for(int i = 0; i <result.length; i++)
+		{
+			for(int j=0; j<result[i].length;j++)
+			{
+				System.out.printf("%4d", result[i][j]);
+			}
+			System.out.println();
+		}
+		
+	}
+	
+	public static void 실습5_12(String[] args) {
+		// TODO Auto-generated method stub
+
+		String[][] words = 
+			{
+					{"chair","의자"},
+					{"computer","컴퓨터"},
+					{"integer","정수"}
+			};
+		int score =0;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		for(int i=0;i<words.length;i++)
+		{
+			System.out.printf("Q%d.%s의 뜻은?",i+1,words[i][0] );
+			
+			String temp = scan.nextLine();
+			
+			if(temp.equals(words[i][1]))
+			{
+				System.out.printf("정답입니다.%n%n");
+				score ++;
+			}
+			else
+			{
+					System.out.printf("틀렷습니다. 정갑은 %s입니다.%n%n",words[i][1]);
+			}
+			
+		}
+		System.out.printf("전체 %d 문제중 %d 문제 맞추셨습니다.%n", words.length,score);
+	}
+	
+	
+	public static void 실습5_13(String[] args) {
+		// TODO Auto-generated method stub
+
+		String[] words = {"television","computer","mouse","phone"};
+		
+		Scanner scan = new Scanner(System.in);
+		
+		for(int i=0;i<words.length;i++)
+		{
+			char[] question = words[i].toCharArray();
+			
+			for(int j=0;j<question.length;j++)
+			{
+				int idx = (int)(Math.random()*question.length);
+				
+				char tmp = question[i];
+				question[i] = question[idx];
+				question[idx]=tmp;
+			}
+			System.out.printf("Q%d. %s의 정답을 입력하세요.>",i+1, new String(question));
+			
+			String answer = scan.nextLine();
+			
+			if(words[i].equals(answer.trim()))
+			{
+				System.out.printf("맞았습니다.%n%n");
+			}else
+			{
+				System.out.printf("틀렸습니다.%n%n");
+			}
+		}
 		
 	}
  
