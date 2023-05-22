@@ -6,4 +6,5 @@
  *
  */
 module JAVAPRAC {
+	requires java.smartcardio;
 }
