@@ -17,8 +17,7 @@ public class Product {
 	
 		Tv(int price)
 		{
-			this.price = price;
-			bonusPoint = (int)(price/10.0);
+			super(price);
 		}
 		
 		public String toString() {

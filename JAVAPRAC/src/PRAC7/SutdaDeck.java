@@ -53,7 +53,7 @@ public class SutdaDeck {
 			this(1,true);
 		}
 		
-		SutdaCard(int num, boolean isKwang)
+		private SutdaCard(int num, boolean isKwang)
 		{
 			this.num = num;
 			this.isKwang = isKwang;
