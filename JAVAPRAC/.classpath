@@ -7,5 +7,6 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="CodingDojang"/>
+	<classpathentry kind="src" path="BackJoon"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
